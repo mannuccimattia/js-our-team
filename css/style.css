@@ -12,12 +12,11 @@ h1 {
 }
 
 #team-members img{
-  width: calc(100% / 3);
-  aspect-ratio: 1/1;
+  width: 33%;
 }
 
 #card-text{
-  width: calc(100% / 3 * 2);
+  width: 67%;
   background-color: black;
   padding: 0 20px;
 }
@@ -30,8 +29,10 @@ h1 {
 
 #team-members p{
   font-weight: 200;
+  font-size: 14px;
 }
 
 #team-members a{
   text-decoration: none;
+  font-size: 14px;
 }

@@ -41,7 +41,7 @@ const teamMembers = [
 const createMemberCard = (member) => {
   const {name, role, email, img} = member
 
-  const card = `<div class="col-12 col-md-6 col-lg-4">
+  const card = `<div class="col-12 col-md-6 col-xl-4">
                   <div class="d-flex">
                     <img src="./${img}" alt="" class="img-fluid">
                     <div class="d-flex flex-column justify-content-center" id="card-text">
