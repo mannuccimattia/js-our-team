@@ -11,9 +11,15 @@ h1 {
   color: white;
 }
 
-#card-img,
+#team-members img{
+  width: calc(100% / 3);
+  aspect-ratio: 1/1;
+}
+
 #card-text{
+  width: calc(100% / 3 * 2);
   background-color: black;
+  padding: 0 20px;
 }
 
 #team-members h4,
