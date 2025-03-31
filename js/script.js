@@ -37,6 +37,14 @@ const teamMembers = [
   }
 ];
 
+// recupero i campi del form
+const nameField = document.getElementById("name");
+const roleField = document.getElementById("role");
+const emailField = document.getElementById("email");
+const imgField = document.getElementById("img");
+const button = document.getElementById("send");
+const membersList = document.getElementById("team-members")
+
 // funzione per creare la singola card del membro del team
 const createMemberCard = (member) => {
   const {name, role, email, img} = member
@@ -68,3 +76,38 @@ const renderTeam = (array) => {
 
 // chiamo renderTeam passandole l'attay teamMembers
 renderTeam(teamMembers);
+
+// event listner
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // recupero i valori inseriti nella form
+  const name = nameField.value;
+  const role = roleField.value;
+  const email = emailField.value;
+  const img = imgField.value;
+
+  // se i valori sono compilati li assegno a un nuovo oggetto
+  if (!name || !role || !email || !img) {
+    alert("Compila tutti i campi");
+    return
+  };
+  const newMember = {
+    name,
+    role,
+    email,
+    img
+  };
+
+  // aggiungo l'oggetto all'array originale
+  teamMembers.push(newMember);
+
+  // azzero i campi della form
+  nameField.value = "";
+  roleField.value = "";
+  emailField.value = "";
+  imgField.value = "";
+
+  // chiamo nuovamente renderTeam per renderizzare la nuova card
+  renderTeam(teamMembers);
+});
